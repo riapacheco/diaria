@@ -7,3 +7,4 @@ Mostly just tired of the ugly journal writing apps that are included with Linux.
 
 ----
 
+Entries route: `api/v1/entries/:id`
