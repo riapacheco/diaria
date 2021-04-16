@@ -5,7 +5,8 @@ const EntrySchema = mongoose.Schema({
   title: {
     type: String,
     required: [true, `Must include a title`],
-    trim: true
+    trim: true,
+    unique: true
   },
   slug: String,
   body: {
