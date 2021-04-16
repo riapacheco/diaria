@@ -8,6 +8,7 @@ const connectDB = require('./config/db');
 // Loaded variables
 dotenv.config({ path: './config/config.env' });
 
+// MongoDB connection
 connectDB();
 
 // Route files
@@ -18,10 +19,13 @@ const app = express();
 // Parser
 app.use(express.json());
 
+// Logging with morgan
 if (process.env.NODE_ENV === 'development') { app.use(morgan('dev')); }
 
+// Mounted routes
 app.use('/api/v1/entries', entries);
 
+// Global / conditional error Handler
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
